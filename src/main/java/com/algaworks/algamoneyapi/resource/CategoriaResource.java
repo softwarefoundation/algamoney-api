@@ -1,4 +1,4 @@
-package com.algaworks.algamoneyapi;
+package com.algaworks.algamoneyapi.resource;
 
 import com.algaworks.algamoneyapi.model.Categoria;
 import com.algaworks.algamoneyapi.repository.CategoriaRepository;
