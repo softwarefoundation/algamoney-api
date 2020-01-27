@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS TB02_PESSOA(
+    CODIGO INTEGER PRIMARY KEY AUTO_INCREMENT,
+    NOME VARCHAR (50) NOT NULL,
+    ATIVO BOOLEAN NOT NULL,
+    LOGRADOURO VARCHAR (50),
+    NUMERO VARCHAR (50),
+    COMPLEMENTO VARCHAR (50),
+    BAIRRO VARCHAR (50),
+    CEP VARCHAR (50),
+    CIDADE VARCHAR (50),
+    ESTADO VARCHAR (50)
+);
+
+INSERT INTO TB02_PESSOA (NOME,ATIVO,LOGRADOURO,NUMERO,COMPLEMENTO,BAIRRO,CEP,CIDADE,ESTADO) VALUES
+('Alice',TRUE,'Rua','1002','Casa Amarela','Centro','78010123','Anapolis','GO'),
+('Ana', TRUE,'Rua','905','Casa Verde','Centro Oeste','78010555','São Paulo','SP'),
+('Carla', FALSE,'Rua','70','Casa Rosa','Centro Norte','78010111','Rio de Janeiro','RJ'),
+('Bruna',FALSE,'Rua','50','Casa Roxa','Centro Leste','78010888','Fortaleza','CE'),
+('Maria',TRUE,'Rua','99','Casa Azul','Centro Sul','78010333','Cuiaba','MT');
