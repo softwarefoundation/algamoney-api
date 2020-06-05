@@ -16,6 +16,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.BeanUtils;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 @RestController
 @RequestMapping("/pessoas")
@@ -52,4 +54,18 @@ public class PessoaResource {
         pessoaRepository.deleteById(codigo);
     }
 
+    @PutMapping("/{codigo}")
+    public ResponseEntity<Pessoa> atualizar(@PathVariable Long codigo, @Valid @RequestBody Pessoa pessoa){
+        Optional<Pessoa> pssOptional = pessoaRepository.findById(codigo);
+        
+        if(!pssOptional.isPresent()){
+            throw new EmptyResultDataAccessException("Não foi encontrado nenhum registro com código : "+codigo,1);
+        }
+        
+        Pessoa pss = pssOptional.get();
+        BeanUtils.copyProperties(pessoa, pss, "codigo");
+        pessoaRepository.save(pss);
+        return  ResponseEntity.ok(pss);
+    }
+    
 }
