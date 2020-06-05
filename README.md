@@ -1,5 +1,10 @@
 # Projeto Alga Works Alga Money
 
+
+## Swagger
+As operações disponíveis na API podem ser utilizadas através da interface
+fornecida pelo Swagger na url: http://localhost:8080/swagger-ui.html
+
 ## Banco de Dados
 
 A aplicação utiliza o banco de dados H2.
