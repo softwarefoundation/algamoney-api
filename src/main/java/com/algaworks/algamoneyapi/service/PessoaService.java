@@ -20,6 +20,11 @@ public class PessoaService {
         return pessoaRepository.save(pss);
     }
     
+    public Pessoa atualizarPropriedadeAtivo(Long codigo, Boolean ativo) {
+        Pessoa pss = pesquisarPessoaPeloCodigo(codigo);
+        pss.setAtivo(ativo);
+        return pessoaRepository.save(pss);
+    }
     
     public Pessoa pesquisarPessoaPeloCodigo(Long codigo) { 
          Optional<Pessoa> pssOptional = pessoaRepository.findById(codigo);
